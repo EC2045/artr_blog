@@ -1,0 +1,149 @@
+:root {
+    --bg-color: #ffffff;
+    --text-color: #1a1a1a;
+}
+
+@font-face {
+    font-family: '2045alphabet';
+    src: url('https://ec2045.github.io/2045font/2045alphabet.otf') format('opentype');
+    font-display: swap;
+}
+
+body {
+    font-family: '2045alphabet', 'Noto Sans JP', sans-serif;
+}
+
+body {
+    font-family: '2045alphabet', 'Noto Sans JP', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    overflow-x: hidden;
+    scroll-behavior: auto;
+}
+
+.serif {
+    font-family: 'Noto Serif JP', serif;
+}
+
+/* ナビゲーション */
+.nav-link {
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    color: #999;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #000;
+}
+
+.hero-title {
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: #1a1a1a;
+}
+
+.hero-subtitle {
+    font-size: clamp(1.2rem, 4vw, 2.8rem);
+    color: #d1d1d1;
+    font-weight: 300;
+    margin-top: -10px;
+}
+
+/* セクション演出 */
+.section-fade {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+    margin-bottom: 10vh;
+}
+
+.section-fade.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.icon-frame {
+    border: 1px solid #e5e5e5;
+    padding: 20px;
+    display: inline-block;
+    background: #fff;
+}
+
+/* 致命的なノイズ・オーバーレイ */
+#glitch-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    z-index: 10000;
+    display: none;
+}
+
+.noise-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+}
+
+#reset-btn {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: transparent;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 12px 24px;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    cursor: pointer;
+    z-index: 10001;
+    transition: all 0.3s;
+}
+
+#reset-btn:hover {
+    background: #fff;
+    color: #000;
+}
+
+.input-blank {
+    display: inline-block;
+    min-width: 180px;
+    border-bottom: 1px solid #000;
+    margin: 0 10px;
+    height: 1.2em;
+    vertical-align: bottom;
+}
+
+.glitch-text {
+    animation: text-shake 0.05s infinite;
+}
+
+@keyframes text-shake {
+    0% {
+        transform: translate(0);
+    }
+
+    50% {
+        transform: translate(1px, -1px);
+    }
+
+    100% {
+        transform: translate(-1px, 1px);
+    }
+}
+
+.down-arrow {
+    font-size: 1.5rem;
+    color: #eee;
+    margin-top: 100px;
+}
